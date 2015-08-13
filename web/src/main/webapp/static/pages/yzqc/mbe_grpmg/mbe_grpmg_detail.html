@@ -1,0 +1,57 @@
+<div class="container-fluid" style="margin-top:40px;">
+    <div class="row">
+        <form class="form-horizontal" role="form" style="width:80%" id="form">
+            <input type="hidden" id="id" data-bind="value:data().pkAreamg">
+
+            <div class="form-group">
+                <label for="code" class="col-sm-2 control-label">编码</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="code" placeholder="编码" required valid-type="integer"
+                           null-msg="请输入11位数字" error-msg="请输入11位数字" reg="\d{11}" maxlength="11"
+                           data-bind="value:data().code">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name" class="col-sm-2 control-label">名称</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" placeholder="名称"
+                           null-msg="请输入名称" error-msg="请输入名称" maxlength="20" data-bind="value:data().name">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="curcore" class="col-sm-2 control-label">积分</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="curcore" placeholder="积分" required valid-type="integer"
+                           null-msg="请输入数字" error-msg="请输入正确的数字" reg="^[0-9]*$" maxlength="9" data-bind="value:data().curcore">
+                </div>
+            </div>            
+            <div class="form-group">
+                <label for="description" class="col-sm-2 control-label">描述</label>
+
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="description" placeholder="说明" rows="5"
+                              maxlength="128" data-bind="value:data().description">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="vstatus" class="col-sm-2 control-label">状态</label>
+                <div class="col-sm-10">
+                	<select id="vstatus" class="form-control">
+                		<option value="1">启用</option>
+                		<option value="0">停用</option>
+                	</select>
+                </div>
+            </div>             
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-primary" data-bind="click:submitForm">&nbsp;&nbsp;保存&nbsp;&nbsp;</button>
+                    <button type="button" class="btn btn-primary" data-bind="click:function(){window.history.go(-1)}">
+                        &nbsp;&nbsp;返回&nbsp;&nbsp;</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

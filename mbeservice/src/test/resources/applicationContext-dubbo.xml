@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd 
+      http://code.alibabatech.com/schema/dubbo
+      http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="application.properties"/>
+    </bean>
+
+    <!-- dubbo 配置 -->
+    <dubbo:application name="${dubbo.application.name}"/>
+    <dubbo:registry address="${dubbo.registry.address}"/>
+    <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}"/>
+
+    <dubbo:monitor protocol="registry"></dubbo:monitor>
+
+    <!-- 生产者声明 -->
+    <bean id="mbeService" class="com.yzqc.crm.mbe.service.MbeGroupServiceImpl"/>
+    <dubbo:service interface="com.yzqc.crm.mbe.api.service.MbeGroupService"
+                   ref="mbeService" version="0.1" retries="0" timeout="5000"
+                   loadbalance="${dubbo.service.loadbalance}"/>
+</beans>

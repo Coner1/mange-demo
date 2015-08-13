@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+      http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+      http://code.alibabatech.com/schema/dubbo
+      http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <context:property-placeholder ignore-unresolvable="true" location="classpath*:/application.properties" />
+
+    <!-- dubbo 配置 -->
+    <dubbo:application name="${dubbo.application.name}"/>
+    <dubbo:registry address="${dubbo.registry.address}"/>
+    <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}"/>
+    <dubbo:monitor protocol="registry"></dubbo:monitor>
+
+    <dubbo:consumer check="false" />
+
+    <!-- 生产者声明 -->
+    <dubbo:reference interface="com.yzqc.crm.mbe.api.service.MbeGroupService" id="mbeService" version="0.1"/>
+    <dubbo:reference interface="com.yzqc.crm.mbe.api.service.MbeAreamgService" id="areamgService" version="0.1"/>
+    <dubbo:reference interface="com.yzqc.crm.mbe.api.service.MbeDivisionmgService" id="divisionmgService" version="0.1"/>
+</beans>

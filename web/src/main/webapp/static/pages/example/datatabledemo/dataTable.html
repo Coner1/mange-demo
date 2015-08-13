@@ -1,0 +1,72 @@
+<div class="container-bluid" style="margin: 10px;">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="panel panel-success">
+				<div class="panel-heading" style="position: relative;">
+					<h3 class="panel-title">列表实例</h3>
+                    <form class="form-search" action="#">
+						<input type="text" name="search_LIKE_name" class="input_search input-medium" placeholder="名称"/>&nbsp;&nbsp;
+						<input type="text" name="search_LIKE_memo" class="input_search input-medium" placeholder="描述"/>&nbsp;&nbsp;
+						<button type="submit" class="btn" id="search_btn"
+							data-bind="click:searchPage">搜索</button>
+				    </form>
+					<div
+						style="position: absolute; right: 245px; top: 10px; cursor: pointer;"
+						>
+						<i class=" fa fa-long-arrow-up" title="上 移" data-bind="click:upClick"></i>
+					</div>
+					<div
+						style="position: absolute; right: 207px; top: 10px; cursor: pointer;"
+						>
+						<i class="fa fa-long-arrow-down" title="下 移" data-bind="click:downClick"></i>
+					</div>
+
+					<div
+						style="position: absolute; right: 167px; top: 10px; cursor: pointer;">
+
+						<i class="fa fa-plus" title="增加行" data-bind="click:addRow"></i>
+					</div>
+					<div
+						style="position: absolute; right: 115px; top: 9px; cursor: pointer;">
+
+						<i class="fa fa-trash-o fa-lg" title="删除行"
+							data-bind="click:delRow"></i>
+					</div>
+
+					<div>
+						<a href="javascript:void(0)"
+							style="position: absolute; right: 46px; top: 10px; text-decoration: none; cursor: pointer;"
+							data-bind="click:saveInfo">保 存</a>
+					</div>
+
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="grid simple">
+
+							<div class="grid-body no-border">
+								<div type="text"
+									u-meta='{"id":"grid1","data":"dataTable1","type":"grid","editable":true,"multiSelect":true}'>
+									<div
+										options='{"field":"theid","dataType":"Long","title":"编号","editType":"string","editable":false}'></div>
+									<div
+										options='{"field":"code","dataType":"DateTime","title":"时间","editType":"string"}'></div>
+									<div
+										options='{"field":"name","dataType":"String","title":"名称","editType":"string"}'></div>
+									<div
+										options='{"field":"memo","dataType":"String","title":"描述","editType":"string"}'></div>
+									<div
+										options='{"field":"isdefault","dataType":"String","title":"是否默认","renderType":"comboRender","editType":"combo","editOptions":{"datasource":"combodata","onselect":"comboSelect"}}'></div>
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
+				<div style="text-align: center;">
+					 <ul u-meta='{"type":"pagination","data":"dataTable1","pageSize":20}' class="pagination" />
+					 </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

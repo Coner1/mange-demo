@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="statelessRealm" class="com.yzqc.common.shiro.StatelessRelam">
+        <property name="cachingEnabled" value="false"/>
+        <property name="accountService" ref="accountService"/>
+        <property name="sessionCacheManager" ref="cacheManager"/>
+    </bean>
+
+    <!-- Subject工厂 -->
+    <bean id="subjectFactory" class="com.yzqc.support.shiro.StatelessSubjectFactory"/>
+
+    <!-- 会话管理器 -->
+    <bean id="sessionCacheManager" class="org.apache.shiro.session.mgt.DefaultSessionManager">
+        <property name="sessionValidationSchedulerEnabled" value="false"/>
+    </bean>
+
+    <!-- 安全管理器 -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="statelessRealm"/>
+        <property name="subjectDAO.sessionStorageEvaluator.sessionStorageEnabled" value="false"/>
+        <property name="subjectFactory" ref="subjectFactory"/>
+        <property name="sessionManager" ref="sessionCacheManager"/>
+    </bean>
+
+    <!-- 相当于调用SecurityUtils.setSecurityManager(securityManager) -->
+    <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="staticMethod" value="org.apache.shiro.SecurityUtils.setSecurityManager"/>
+        <property name="arguments" ref="securityManager"/>
+    </bean>
+
+    <bean id="statelessAuthcFilter" class="com.yzqc.support.shiro.StatelessFilter"></bean>
+
+    <bean id="logout" class="com.yzqc.support.shiro.StatelessLogoutFilter">
+        <property name="sessionCacheManager" ref="cacheManager"/>
+    </bean>
+
+    <!-- Shiro的Web过滤器 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/login"/>
+        <property name="successUrl" value="/"/>
+        <property name="filters">
+            <util:map>
+                <entry key="statelessAuthc" value-ref="statelessAuthcFilter"/>
+            </util:map>
+        </property>
+        <property name="filterChainDefinitions">
+            <value>
+                /logout = logout
+                /static/** = anon
+                /api/** = anon
+                /cxf/** = anon
+                /jaxrs/** = anon
+                /weixin/** = anon
+                /login/** = anon
+                /**=statelessAuthc
+            </value>
+        </property>
+    </bean>
+
+    <!-- Shiro生命周期处理器-->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <bean id="cacheManager" class="com.yzqc.support.shiro.SessionCacheManager">
+        <property name="jedisTemplate" ref="jedisTemplate"/>
+        <property name="sessionTimeout" value="86400"/>
+    </bean>
+
+</beans>

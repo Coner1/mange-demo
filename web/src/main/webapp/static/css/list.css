@@ -1,0 +1,565 @@
+
+<style>
+	
+	
+	* {
+		padding: 0px;
+		margin: 0px;
+		-webkit-padding-start:0px
+	}
+	 input,textarea{
+	 	 font-family: 'arial','微软雅黑','宋体' !important;
+	 	 border: 1px solid;	
+	 }
+	 button:focus{
+		outline:none !important;
+	 }
+	 input:focus{
+	 	box-shadow:none !important;
+		outline:none !important;
+	 	border-radius: 0px;
+		border-color: #4F8EDC !important;
+		color: #4F8EDC !important;
+		
+	 	
+	 }
+	 textarea:focus{
+	 	box-shadow:none !important;
+		outline:none !important; 
+		border-radius: 0px;
+		border-color:  #4F8EDC !important;
+		color: #4F8EDC !important;
+	 }
+	 .placeholder{
+	 	font-family: 'arial','微软雅黑','宋体' !important;
+	 	color: #AEAEAE !important;	
+	 	
+	 }
+	 :-ms-input-placeholder{
+	 	font-family: 'arial','微软雅黑','宋体' !important;
+	 	color: #AEAEAE !important;	
+	 }
+	 
+	.top_con ul li{
+		text-decoration: none;
+		list-style: none;
+		
+	}
+	.top_con{
+		background-color: #E4E4E4;
+		width: 100%;
+		height: 50px;
+		border-bottom: 1px solid #C9C9C9;
+	}
+	
+	.left_control{
+		float: left;
+		font-size: 15px;
+		padding:0px;
+		width:400px;
+		
+		
+	}
+	.control_button{
+		float: right;	
+		padding-right: 20px;
+		
+		
+	}
+	
+	.left_control label{
+		color: #4d4d4d;
+		float: left;
+		height: 50px;
+		float: left;
+		line-height: 50px;
+		margin: 0px;
+		padding: 0px 30px;
+		cursor: pointer;
+		font-family: "微软雅黑";
+		font-size: 15px; 
+		
+	}
+	.control_button button{
+		border: 1px solid #C9C9C9;
+		color: #4d4d4d;
+		background-color: #fff;
+		float: left;
+		height: 36px;
+		float: left;
+		line-height: normal;
+		margin: 8px 4px;
+		padding: 0px 10px;
+		cursor: pointer;
+		font-family: "微软雅黑";
+		font-size: 14px;
+		transition: all 0.12s linear 0s !important;
+	}
+	 
+	
+	.control_button button span{
+		
+		font-size: 1.3em;
+		margin-right: 10px;
+		vertical-align: sub;
+		
+		
+	}
+	.control_button button .glyphicons-bin{
+		margin-right: 0px;
+	}
+	.control_button button i{
+		
+		font-size: 1.4em;
+		margin-right: 10px;
+		vertical-align: sub;
+		
+	}
+	.left_control .cur{
+		/* position: relative; */
+		border: none;
+		line-height: 50px;
+		margin: 0px;
+		background-color: #ffffff;
+		color: #4F8EDC;
+		border-bottom: 4px solid #4f8edc;
+		height: 50px;
+		/* right: 1px; */
+	}
+	.control_button button:hover{
+		background-color: #DEE3EE;
+		
+	}
+	.middle_input{
+		
+		padding: 10px 15px;
+	}
+	.progress_list label{
+		font-weight: normal;
+	 	
+	 	
+	 }
+	 .progress_list .ufida-grid{
+	 	border-color: #aeaeae;
+	 	
+	 }
+	 .progress_list .tab-content{
+	 	margin-top: 20px;
+	 }
+	 .progress_list .nav-tabs > li > a {
+	 	padding:5px 10px;
+	 }
+	 .progress_list .tab-content > .active,.tab-pane{
+	 	padding:0px
+	 }
+	
+	 .progress_list .quare_input{
+		min-height: 30px !important;
+		padding:5px 11px !important;
+		line-height:normal ;
+		height: 30px;
+		border-radius: 0px;
+		border-color: #AEAEAE;
+		color:#333333;
+	}
+    
+	.progress_list .middle_input .quare_input{
+		width: 140px;
+	}
+	.middle_input .btn{
+		border:none;
+		border-radius: 0px;	
+		height: 30px;	
+		font-family: "微软雅黑";
+		padding: 10px 15px;
+	}
+	
+	.quare_down_menu{
+		display: inline-block;
+		color:#AEAEAE ;
+		border: 1px solid #AEAEAE;
+		height: 28px;
+		padding: 0px 10px;
+		line-height: 28px;
+		cursor: pointer
+	}
+	.quare_down_menu .down_menu_text{
+		padding-right: 10px;
+	}
+	.quare_down_menu .dropdown-menu{
+		min-width: 95px;
+		top: 24px;
+		left: 0px;
+	}
+	.btn-wh{
+		min-height: 28px !important;
+		padding: 0px !important ;
+		width: 100px;		
+		vertical-align:top !important;	
+		margin-left: 10px;
+		
+		
+	}
+	.row{
+		
+		margin: 15px;
+		margin-top: 5px;
+	}
+	.info_title{
+		left: 50%;
+		top: 56px;
+		position: absolute;
+		/* text-align: center; */
+		font-weight: bold;
+	}
+	.listinfo_nav label{
+		padding: 5px 30px;
+		margin: 0px;
+		line-height: 22px;
+		cursor:pointer;
+		
+	}
+	.listinfo_nav .cur{
+		border-radius: 3px 3px 0px 0px;
+		border: 1px solid #4F8EDC;
+		border-bottom: none;
+		line-height: 22px;
+
+		
+	}
+	.pic_con{
+		width: 100%;
+		height: 300px;
+	}
+	.daterangepicker {
+		border: 1px solid #AEAEAE;
+	}
+	.daterangepicker .btn-small {
+		line-height: 20px;
+		
+	}
+	.daterangepicker .btn-success {
+		background-color:#357ebd ;
+		border-color: #3071a9;
+		
+	}
+	.daterangepicker .ranges {
+		padding-top: 5px;
+	}
+	.form-inline .form-group {
+	    display: inline-block;
+	    margin-bottom: 0;
+	    vertical-align: middle;
+	 }
+	 .form_rel{
+	 	position: relative;
+	 }
+	 .form_rel .in_input{
+		cursor: pointer;
+		width: 30px;
+		position: absolute;
+		
+		right: 15px;
+		
+		line-height: 36px;
+		height: 36px;
+	 }
+	 
+	 .nav_bpm>li{
+		float:left;
+	 }
+	 .nav > li > a:hover, .nav > li > a:focus{
+		color:#4d4d4d;
+		background-color:#ffffff;
+	 }
+	 .nav_bpm .active>a{
+		
+		border: 1px solid #4F8EDC;
+		color:#4F8EDC;
+		border-bottom: none;
+	 }
+	 .nav_bpm>li>a{
+		border-radius: 3px 3px 0px 0px;
+		border: 1px solid #E5E5E5;
+		padding: 5px 25px;
+		color:#4d4d4d;
+		/* background-color: #4F8EDC; */
+		border-bottom: none;
+	 }
+	 .new_mark{
+	 	transition: width 1s;
+	 	box-shadow: 0px 2px 3px;
+	 	position: absolute;
+	 	width:0px;
+	 	top:50px;
+	 	right:0px;
+	 	bottom:0px;
+	 	background: #FFFFFF;
+	 	overflow-x: hidden;
+	 	border-left: 1px solid #C5C5C5;
+	 	overflow: hidden;
+	 	z-index: 22;
+	 }
+	  .new_mark .ufida-grid{
+	 	border-color: #aeaeae;
+	 	overflow-y: auto;
+	 }
+	 .new_mark .mark_head{
+	  	font-size: 14px;
+		color: #333;
+		height: 50px;
+		line-height: 50px;
+		padding: 0px 6px 0px 26px;
+		border: 1px solid #E4E4E4;
+		overflow: hidden;
+		
+	 }
+	 .mark_close{
+	 	height: 50px;
+		padding-top: 16px;
+		float: right;
+		width: 50px;
+		cursor:pointer;
+	  }
+	 
+	  .new_mark .mark_main {
+	  	padding-top: 34px;
+	  	overflow-x: hidden;
+	  	overflow-y: auto;
+		position: absolute;
+		right: 0px;
+		left: 0px;
+		bottom: 50px;
+		top: 50px;
+	  }
+	 
+	  .progress_list .mark_main .quare_input{
+	  	line-height: 30px;		
+		min-height: 30px !important;
+		width: 100%;
+	  }
+	  
+	  .new_mark .control-label {
+		color: #666;
+		line-height: 37px;
+		height: 37px;
+		overflow: hidden;
+		font-size: 14px;
+		margin: 0px;
+		padding: 0px !important;
+	  }
+	  .new_mark .form-group{
+	  	margin-bottom: 18px;
+	  }
+	  .new_mark input,textarea{
+	  	font-size: 14px;
+	 	border-radius: 0px;
+		border-color: #AEAEAE;
+		color:#333333;
+	  }
+	  .new_mark textarea:focus{
+	  	outline:none !important;
+	 	border-radius: 0px;
+		border:1px solid #4F8EDC !important;
+		color: #4F8EDC !important;
+	  }
+	  .new_mark input:focus{
+	  	outline:none !important;
+	 	border-radius: 0px;
+		border:1px solid #4F8EDC !important;
+		color: #4F8EDC !important;
+	  }
+     
+     
+	 .new_mark .mark_footer{
+	 	background-color: #FFFFFF;
+		right: 0px;
+		left: 0px;
+		bottom: 0px;
+		padding-top:10px;
+		margin-bottom: 10px;
+		text-align: right;
+		position: absolute;
+		border-top: 1px solid #d7d7d7;
+	 }
+	 .mark_footer>div{
+	 	height: 28px;
+	 	overflow: hidden;
+	 }
+	 .mark_footer .btn-wh{
+	 	border-radius: 0px;
+	 	width: 80px;	
+	 }
+	
+	
+	 .process_tree{
+	 	margin-left: 15px;
+		border: 1px solid #aeaeae;
+		height: 376px;
+		width: 260px;
+		display: inline-block;
+		position: absolute;
+		top: 100px;
+		
+		border-radius: 0px;
+	 	
+	 }
+	 .modal-open .modal-header{
+	 	padding: 0px;
+		background-color: #4f8edc;
+		color: #fff;
+	 	
+	 }
+	 .modal-open .modal-title{
+		 height: 40px;
+		 line-height: 40px;
+		 font-size: 14px;
+		 padding-left: 10px;
+	 }
+	 .modal-footer .btn{
+		min-height: 28px !important;
+		padding: 0px !important ;
+		width: 100px;		
+		vertical-align:top !important;	
+		margin-left: 10px !important;
+		
+		border-radius: 0px;
+	 	width: 80px;			
+	}
+	.modal-footer .btn-primary {
+		background-color: #4f8edc !important;
+		float:right
+	}
+	.modal-footer .btn-default {
+		background-color: #ffffff !important;
+		color:#333;
+	 }
+	 .progress_list .modal-backdrop{
+	 	bottom: 0;
+		position: absolute;
+		top: 50px;
+		right:0;
+		left: 0
+	 }
+	  .progress_list .btn-success {
+		background-color: #4F8EDC;
+		border-color: #3071a9;
+	 }
+	 .color_state_b{
+	 	border-radius: 8px;
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		background-color: #4084D8;
+		margin-top: 8px;
+		margin-right: 8px;
+	 }
+	 .color_state_o{
+	 	border-radius: 8px;
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		background-color: #F38F19;
+		margin-top: 8px;
+		margin-right: 8px;
+	 }	
+	 .color_state_r{
+	 	border-radius: 8px;
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		background-color: #EE1302;
+		margin-top: 8px;
+		margin-right: 8px;
+	 }
+	 .color_state_g{
+	 	border-radius: 8px;
+		width: 8px;
+		height: 8px;
+		display: inline-block;
+		background-color: #87C21A;
+		margin-top: 8px;
+		margin-right: 8px;
+	 }
+	 .alert-dialog {
+	 	height: auto;
+		background-color: #F2F2F2;
+		border-color: #C9C9C9;
+		padding: 0px;
+		border-radius: 0px;
+		color: #333333;
+		width: 330px;
+		margin-left: -100px;
+	 }
+	  .alert-dialog h4{
+		background-color: #ffffff;
+		padding: 10px 15px;
+		border-bottom: 1px solid #C9C9C9;
+	 }
+	 .alert-dialog p{	 	
+		margin-bottom: 45px;
+		min-height: 60px;
+		max-height: 200px;
+		padding: 10px 15px;
+		text-align: center;
+		overflow-y: auto;
+	 }
+	  .alert-dialog .close{
+	 	top: 5px;
+		right: 14px;
+		color: #333333;
+	 }	
+	 .alert-dialog-footer{
+	 	width: auto;
+	 	right:0px;
+	 	left:auto;
+	 }	
+	 .alert-dialog-footer .btn{
+		min-height: 28px !important;
+		padding: 0px !important ;			
+		vertical-align:top !important;	
+		margin-left: 10px !important;		
+		border-radius: 0px;
+		background-color: #ffffff !important;
+	 	width: 80px;	
+	 	color: #333333;
+	 	border-color:#C9C9C9;
+	 	 font-family: 'arial','微软雅黑','宋体' !important;		
+	 }
+	 .tree .tree-folder .tree-folder-header:hover{
+	 	background-color: #ffffff;
+	 }	
+	 .range_inputs{
+	 	height:32px;
+	 }
+	 .tree_main .tree_body{
+	 	position: absolute;
+		
+		left: 15px;
+		width: 200px;
+	 
+	 	bottom: 70px;
+	 	top: 40px;
+	 	border-radius: 0px;
+}
+	 .tree_main .grid_body{
+	 	
+		bottom: 70px;
+		width: 320px;
+		position: absolute;
+		/* right: 10px; */
+		left: 235px;
+		top: 40px;
+}
+	 .tree_body .ztree{
+	 	 height: auto;
+	 }
+	 .blank_page{
+	 	position: absolute;
+	 	left: 0px;
+	 	right: 0px;
+	 	top:0px;
+	 	bottom:0px;
+	 }
+	 
+</style>

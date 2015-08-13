@@ -1,0 +1,240 @@
+
+
+.form-inline {
+ padding-top:25px;
+ padding-bottom:15px;
+}
+
+@media (min-width: 455px) {
+	.form-inline > fieldset.billitem, .form-readonly-item {
+	  width: 99%;
+	  max-width:304px;
+	  min-width:284px;
+	}
+}
+
+@media (min-width: 785px) {
+	.form-inline > fieldset.billitem, .form-readonly-item {
+	  width: 49%;
+	  max-width:304px;
+	  min-width:284px;
+	}
+}
+
+@media (min-width: 992px) {
+	.form-inline > fieldset.billitem, .form-readonly-item {
+	  width: 33%;
+	  max-width:304px;
+	  min-width:284px;
+	}
+}
+
+@media (min-width: 1345px) {
+	.form-inline > fieldset.billitem, .form-readonly-item {
+	  width: 24%;
+	  max-width:304px;
+	  min-width:284px;
+	}
+}
+
+@media (min-width: 1623px) {
+	.form-inline > fieldset.billitem, .form-readonly-item {
+	  width: 19%;
+	  max-width:304px;
+	  min-width:284px;
+	}
+}
+
+/*单据详情*/
+@media (min-width: 455px) {
+	.form-readonly-item.receipt-details {
+	  width: 99%;
+	  max-width:259px;
+	  min-width:204px;
+	}
+}
+
+@media (min-width: 785px) {
+	.form-readonly-item.receipt-details {
+	  width: 49%;
+	  max-width:259px;
+	  min-width:204px;
+	}
+}
+
+@media (min-width: 992px) {
+	.form-readonly-item.receipt-details {
+	  width: 33%;
+	  max-width:259px;
+	  min-width:204px;
+	}
+}
+
+@media (min-width: 1345px) {
+	.form-readonly-item.receipt-details {
+	  width: 24%;
+	  max-width:259px;
+	  min-width:204px;
+	}
+}
+
+@media (min-width: 1623px) {
+	.form-readonly-item.receipt-details {
+	  width: 19%;
+	  max-width:259px;
+	  min-width:204px;
+	}
+}
+
+
+fieldset.billitem.form-group {
+    margin-bottom: 10px;
+}
+
+.billitem-label {
+  width: 84px;
+    text-align: right;
+	padding-left:0;
+	float:right;
+}
+
+fieldset.billitem > input.form-control, fieldset.billitem > div.divinput, fieldset.billitem > div.select-input, fieldset.billitem > .form_date, fieldset.billitem > .billitem-checkbox {
+	width:175px !important;
+	float:right;
+	  margin-left: 10px;
+}
+
+.billitem-checkbox {
+  margin-left: 105px;
+}
+
+.billitem {
+   margin-right: 0;
+}
+.input-group-addon,.btn-select {
+  padding: 3px 10px;
+  color:#c9c9c9 !important;
+}
+.input-group-addon:hover,.btn-select:hover {
+  color:#000 !important;
+}
+
+.billitem input[type=text],.billitem div.form-control {
+  min-height: 28px;
+  height:28px;
+}
+.billitem div.form-control {
+	width:140px !important;
+}
+
+
+.form-readonly-label {
+  width: 87px !important;
+  float:right;
+  height:28px;
+  font-size: 12px;
+  line-height: 28px;
+
+}
+
+.form-readonly-content {
+  width: 166px !important;
+  margin-left:18px;
+    float:right;
+font-weight: normal;
+height:28px;
+font-size: 12px;
+line-height: 28px;
+
+}
+
+.form-readonly {
+  padding-top: 25px;
+  padding-bottom: 15px;
+}
+
+.input-group-addon {
+	  background: #fff;
+  border-radius: 3px !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+  border: 1px solid #c9c9c9;
+  border-left:none;
+}
+
+.form-control {
+  border: 1px solid #c9c9c9;
+  -webkit-box-shadow:none;
+  box-shadow:none;
+  -webkit-transition:none;
+  transition:none;
+  
+}
+
+fieldset > .input-group > .form-control {
+	border-right:none;
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  cursor: not-allowed;
+  background-color: #f6f7f9;
+  opacity: 1;
+}
+
+.form-control[disabled] .input-group-addon, fieldset[disabled] .input-group-addon,fieldset[disabled] .btn-select {
+  cursor: not-allowed !important;
+  background-color: #f6f7f9 !important;
+  opacity: 1;
+}
+
+label {
+  margin-bottom: 0;
+}
+.billitem-label {
+	height:30px;
+	  line-height: 15px;
+	    padding: 5px 0;
+}
+
+
+.form-readonly-item {
+   margin-bottom: 0px;
+}
+
+fieldset.billitem > .select-input {
+	  height: 28px !important;
+}
+
+fieldset.billitem > .btn-select {
+  height: 28px;
+  width: 35px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  background-color: #fff;
+  padding: 3px 10px;
+  font-size: 14px;
+    color: #9EA9B2;
+    border-left:none;
+}
+
+.input-group-addon > .fa.fa-angle-down,.btn-select > .fa.fa-angle-down{
+	font-size:20px;
+}
+
+.form-control:focus{
+	border-color:#c9c9c9;
+	-webkit-box-shadow:none;
+	box-shadow:none;
+}
+
+.billitem .divinput {
+	border-color:#c9c9c9;
+}
+.btn-select:hover, .btn-select:focus{
+	border-color:#c9c9c9;
+}
+
+.billitem-label {
+				font-size: 12px;
+				font-weight: normal;
+			}
